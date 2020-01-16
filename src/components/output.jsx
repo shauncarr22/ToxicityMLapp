@@ -49,16 +49,14 @@ class Output extends React.Component{
     render(){
         let output 
         if(this.state.loading === false){
-            output = 
-                        <ul>
-                            <li>{this.state.results[0]}</li>
-                            <li>{this.state.results[1]}</li>
-                            <li>{this.state.results[2]}</li>
-                            <li>{this.state.results[3]}</li>
-                            <li>{this.state.results[4]}</li>
-                            <li>{this.state.results[5]}</li>
-                            <li>{this.state.results[6]}</li>
-                        </ul>
+            output = <div>
+                {this.state.results.map((val,i) => (
+                    <ul>
+                        <li key={i}>{val}</li>
+                    </ul>
+                ))}
+            </div> 
+                    
             // output = <p>Test</p>
         } else {
             output = <p>Waiting</p>
