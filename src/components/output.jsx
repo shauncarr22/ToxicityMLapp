@@ -36,9 +36,9 @@ class Output extends React.Component{
         let result = []
         for(let i = 0; i < outcome.length; i++){
             if(outcome[i] === undefined){
-                result.push(false)
+                result.push("False")
             } else {
-                result.push(outcome[i])
+                result.push("True")
             }
         }
         this.setState({results:result, loading: false})
@@ -49,14 +49,7 @@ class Output extends React.Component{
     render(){
         let output 
         if(this.state.loading === false){
-            output = <div>
-                {this.state.results.map((val,i) => (
-                    <ul>
-                        <li key={i}>{val}</li>
-                    </ul>
-                ))}
-            </div> 
-                    
+            output = <p>{this.state.results[0]}    {this.state.results[1]}    {this.state.results[2]}    {this.state.results[3]}    {this.state.results[4]}    {this.state.results[5]}    {this.state.results[6]}</p>            
             // output = <p>Test</p>
         } else {
             output = <p>Waiting</p>
