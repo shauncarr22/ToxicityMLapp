@@ -6,7 +6,7 @@ const Nav  = () => {
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand">Navbar</a>
             <a class="nav-item active ml-2" ><Link to="/">Home</Link></a>
-            <a class="nav-item active ml-2" ><Link to="/features">Features</Link></a>
+            <a class="nav-item active ml-2" ><Link to="/About">About</Link></a>
         </nav>
     )
 }

@@ -33,30 +33,44 @@ class Output extends React.Component{
 
     sortResults(outcome){
         // console.log(outcome)
+        let test = outcome
+        // console.log(result)
         let result = []
-        for(let i = 0; i < outcome.length; i++){
-            if(outcome[i] === undefined){
-                result.push("False")
+        for(let i = 0; i < test.length; i++){
+            if(test[i] === false){
+                result.push('false')
+            } else if(test[i] === true){
+                result.push('true')
+            } else if(test[i] === null){
+                result.push('null')
             } else {
-                result.push("True")
+                result.push('undefined')
             }
         }
         this.setState({results:result, loading: false})
-        console.log(this.state.results);
     }
 
 
     render(){
         let output 
         if(this.state.loading === false){
-            output = <p>{this.state.results[0]}    {this.state.results[1]}    {this.state.results[2]}    {this.state.results[3]}    {this.state.results[4]}    {this.state.results[5]}    {this.state.results[6]}</p>            
-            // output = <p>Test</p>
+            output = <div>
+                <p>Identity Attack: {this.state.results[0]}</p>
+                <p>Insult: {this.state.results[1]}</p>
+                <p>Obscene: {this.state.results[2]}</p>
+                <p>Severe Toxicity: {this.state.results[3]}</p>
+                <p>Sexual Explicit: {this.state.results[4]}</p>
+                <p>Threat: {this.state.results[5]}</p>
+                <p>Toxicity: {this.state.results[6]}</p>
+                </div>
+           
+            
         } else {
             output = <p>Waiting</p>
         }
         return(
             <div>
-                <span class="px-md-5">Identity Attack    Insult    Obscene    Severe Toxicity    Sexual Explicit    Threat    Toxicity</span>
+                <p>Results</p>
                 <div>
                 {output}
                 </div>
@@ -69,3 +83,5 @@ class Output extends React.Component{
 
 
 export default Output
+
+//               
